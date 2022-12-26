@@ -5,12 +5,12 @@
 个人简介 出生地：河北 性别：男 年龄：20岁 个人经历 2021年就读于哈尔滨工业大学 '>
 <title>关于</title>
 
-<link rel='canonical' href='https://PangXuHao.github.io/%E5%85%B3%E4%BA%8E/'>
+<link rel='canonical' href='https://Pang3220.github.io/%E5%85%B3%E4%BA%8E/'>
 
 <link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='关于'>
 <meta property='og:description' content='大家好,我是Pang
 个人简介 出生地：河北 性别：男 年龄：20岁 个人经历 2021年就读于哈尔滨工业大学 '>
-<meta property='og:url' content='https://PangXuHao.github.io/%E5%85%B3%E4%BA%8E/'>
+<meta property='og:url' content='https://Pang3220.github.io/%E5%85%B3%E4%BA%8E/'>
 <meta property='og:site_name' content='Pang小站'>
 <meta property='og:type' content='article'><meta property='article:section' content='Page' />
 <meta name="twitter:title" content="关于">
@@ -281,6 +281,46 @@
      
     
         
+    <script src="https://utteranc.es/client.js" 
+        repo="Pang3220/BlogTalks"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
     
 
     <footer class="site-footer">
