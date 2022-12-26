@@ -281,36 +281,31 @@
      
     
         
-    <div id="gitalk-container"></div>
-<link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"
-/>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css" />
+
+<div id="vssue"></div>
+
+<script src="https://unpkg.com/vue@2/dist/vue.runtime.min.js"></script>
+<script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+
 <script>
-    const gitalk = new Gitalk({
-        clientID: "0b28e83dbd76cda3ef64",
-        clientSecret: "6729a6bd62062dd6fcfe39c1801e0b359896591a",
-        repo: "Gitalk",
-        owner: "Pang3220",
-        admin: ["Pang3220"],
-        distractionFreeMode: false, 
-        id: md5(location.pathname), 
+    new Vue({
+        el: "#vssue",
+        render: (h) =>
+            h("Vssue", {
+                props: {
+                    title: "关于",
+                    options: {
+                        autoCreateIssue:  false ,
+                        owner: "Pang3220",
+                        repo: "Pang3220\/BlogTalks",
+                        clientId: "3d60dd6c4decd41196bd",
+                        clientSecret: "3f3e58c5796869185565c1bc09240eb0616ce28b",
+                    },
+                },
+            }),
     });
-    (function () {
-        if (
-            ["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1
-        ) {
-            document.getElementById("gitalk-container").innerHTML =
-                "Gitalk comments not available by default when the website is previewed locally.";
-            return;
-        }
-        gitalk.render("gitalk-container");
-    })();
 </script>
-
-
 
     
 
