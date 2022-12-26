@@ -307,31 +307,45 @@
      
     
         
-    <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css" />
+    <script src="https://utteranc.es/client.js" 
+        repo="Pang3220/BlogTalks"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
 
-<div id="vssue"></div>
-
-<script src="https://unpkg.com/vue@2/dist/vue.runtime.min.js"></script>
-<script src="https://unpkg.com/vssue/dist/vssue.gitee.min.js"></script>
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
 
 <script>
-    new Vue({
-        el: "#vssue",
-        render: (h) =>
-            h("Vssue", {
-                props: {
-                    title: "Test",
-                    options: {
-                        autoCreateIssue:  true ,
-                        owner: "Pang3220",
-                        repo: "Pang3220\/BlogTalks",
-                        clientId: "2250d9f1f86c8603b98d50e30878128e7fc61b31827c4a2e47c1548199520df4",
-                        clientSecret: "2cf840a662d4e68021faa9dee0a5d8099e70c466294aed45855b0fa64c12524d",
-                    },
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
                 },
-            }),
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
     });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setUtterancesTheme(e.detail)
+    })
 </script>
+
 
     
 
